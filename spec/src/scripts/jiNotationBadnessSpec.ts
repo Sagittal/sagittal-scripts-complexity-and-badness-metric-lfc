@@ -1,6 +1,6 @@
 import {Io} from "@sagittal/general"
-import {onlyRunInCi} from "../../helpers/onlyRunInCi"
-import {runScriptAndGetConsoleOutput} from "../../helpers/scripts/runScriptAndGetConsoleOutput"
+import {onlyRunInCi} from "../../helpers/shared/onlyRunInCi"
+import {runScriptAndGetConsoleOutput} from "../../helpers/shared/scripts/runScriptAndGetConsoleOutput"
 
 describe("ji-notation-badness", (): void => {
     it("checks each comma in the JI notation to verify if it is the best (by LPEI) in its zone (Extreme capture zone, by default, but can be configured for secondary comma zone) and if not gives the JI notation one point (which is bad)", (): void => {
