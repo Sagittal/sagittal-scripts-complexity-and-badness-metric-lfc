@@ -12,7 +12,7 @@
     "test": "node -r ts-node/register/transpile-only node_modules/jasmine/bin/jasmine",
     "test-names": "node -r ts-node/register/transpile-only node_modules/jasmine/bin/jasmine --names=true",
     "test-ci": "node -r ts-node/register node_modules/jasmine/bin/jasmine --ci=true",
-    "tmp": "node -r ts-node/register/transpile-only --max-old-space-size=131072 spec/helpers/tmp.ts",
+    "tmp": "node -r ts-node/register/transpile-only --max-old-space-size=131072 spec/helpers/tmp/tmp.ts",
     "solve-best-complexity-metric": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/complexityAndBadnessMetricLfc/scripts/solveBestComplexityMetric.ts",
     "ji-notation-badness": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/complexityAndBadnessMetricLfc/scripts/jiNotationBadness.ts"
   },

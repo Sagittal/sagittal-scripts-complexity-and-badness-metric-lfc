@@ -2,11 +2,7 @@ import {Comma, Grade, Parameter} from "@sagittal/general"
 import {CommaClassId} from "@sagittal/system"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../src/globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../src/metrics"
-import {
-    ComplexityMetric,
-    ComplexityMetricFamilyId,
-    ComplexityParameterId,
-} from "../../src/types"
+import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from "../../src/types"
 import {computeZoneComplexityMetricGrade} from "../../src/zoneMetricGrade"
 
 describe("computeZoneComplexityMetricGrade", (): void => {
