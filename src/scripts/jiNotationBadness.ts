@@ -1,12 +1,22 @@
-import {Comma, Filename, Grade, ioSettings, LogTarget, saveLog, setupScriptAndIo, Sum, time} from "@sagittal/general"
+import {
+    Comma,
+    Filename,
+    Grade,
+    ioSettings,
+    LogTarget,
+    program,
+    saveLog,
+    setupScriptAndIo,
+    Sum,
+    time,
+} from "@sagittal/general"
 import {CommaClassId, Notation} from "@sagittal/system"
-import {program} from "commander"
 import {EXCLUDED_COMMAS} from "../constants"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../globals"
 import {computeZoneBadnessGrade} from "../zoneBadnessGrade"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
-setupScriptAndIo("complexityAndBadnessMetricLfc" as Filename, [LogTarget.ALL])
+setupScriptAndIo("jiNotationBadness" as Filename, [LogTarget.ALL])
 
 let jiNotationBadnessGrade = 0 as Sum<Grade<Notation>>
 

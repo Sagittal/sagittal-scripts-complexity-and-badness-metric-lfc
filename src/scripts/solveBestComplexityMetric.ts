@@ -3,12 +3,12 @@ import {
     ioSettings,
     isUndefined,
     LogTarget,
+    program,
     saveLog,
     ScriptFlag,
     setupScriptAndIo,
     time,
 } from "@sagittal/general"
-import {program} from "commander"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../globals"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../metrics"
 import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../optimize"
@@ -20,7 +20,7 @@ program
     .option(`-${ScriptFlag.SECONDARY_COMMA_ZONES}, --secondary-comma-zones`, "use commas in each comma's secondary comma zone, rather than the default behavior of its capture zone in the Extreme precision level notation")
     .option(`-${ScriptFlag.COMPLEXITY_SEARCH_ED}, --complexity-search-ed <complexitySearchEd>`, "number of equal divisions for each parameter's search scope")
 
-setupScriptAndIo("complexityAndBadnessMetricLfc" as Filename, [LogTarget.ALL])
+setupScriptAndIo("solveBestComplexityMetric" as Filename, [LogTarget.ALL])
 
 complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries =
     computeZoneCommaEntries(!!program.secondaryCommaZones)
