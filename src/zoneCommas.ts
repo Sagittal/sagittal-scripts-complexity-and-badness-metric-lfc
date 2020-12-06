@@ -5,7 +5,7 @@ const computeZoneCommaEntries = (secondaryCommaZones: boolean): Array<[CommaClas
     const zoneCommaType = secondaryCommaZones ? "secondaryCommaZone" : "extremeCaptureZone"
 
     return Object.entries(JSON.parse(
-        readLines(`src/scripts/jiPitch/results/${zoneCommaType}Commas.txt` as Filename).join(NEWLINE),
+        readLines(`src/input/${zoneCommaType}Commas.txt` as Filename).join(NEWLINE),
     )) as Array<[CommaClassId, Comma[]]>
 }
 
