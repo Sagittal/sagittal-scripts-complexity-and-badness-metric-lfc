@@ -1,6 +1,4 @@
-import {Io} from "@sagittal/general"
-import {onlyRunInCi} from "../../helpers/shared/onlyRunInCi"
-import {runScriptAndGetConsoleOutput} from "../../helpers/shared/scripts/runScriptAndGetConsoleOutput"
+import {Io, onlyRunInCi, runScriptAndGetConsoleOutput} from "@sagittal/general"
 
 describe("solve-best-complexity-metric", (): void => {
     it("for each of the 8 complexity metric families, checks each of its complexity parameter sets in scope, then lists the sets which tie for minimizing the metric grade", (): void => {
