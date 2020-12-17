@@ -1,5 +1,5 @@
 import {Combination, Grade, LogTarget, Parameter, Sum} from "@sagittal/general"
-import * as save from "@sagittal/general/dist/io/scripts/save"
+import * as save from "@sagittal/general/dist/cjs/io/scripts/save"
 import * as metricGrade from "../../src/metricGrade"
 import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../src/metrics"
 import {logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade} from "../../src/optimize"
