@@ -2,9 +2,9 @@ import {
     Comma,
     Filename,
     Grade,
-    ioSettings,
     LogTarget,
     program,
+    scriptSettings,
     saveLog,
     setupScriptAndIo,
     Sum,
@@ -34,4 +34,4 @@ complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries
 
 saveLog(`\nJI NOTATION'S BADNESS GRADE WAS: ${jiNotationBadnessGrade}`, LogTarget.FINAL)
 
-if (ioSettings.time) saveLog(`\ntook ${time()}`, LogTarget.FINAL)
+if (scriptSettings.time) saveLog(`\ntook ${time()}`, LogTarget.FINAL)

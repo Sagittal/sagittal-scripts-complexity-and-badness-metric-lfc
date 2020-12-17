@@ -1,11 +1,11 @@
 import {
     Filename,
-    ioSettings,
     isUndefined,
     LogTarget,
     program,
     saveLog,
     ScriptFlag,
+    scriptSettings,
     setupScriptAndIo,
     time,
 } from "@sagittal/general"
@@ -40,7 +40,7 @@ saveLog("Complexity grades (* identifies the actual comma for each zone)\n", Log
 complexityMetricFamiliesWithParametersEntries
     .forEach(logComplexityParameterSetsForComplexityMetricFamilyWhichOptimizeItsGrade)
 
-if (ioSettings.time) {
+if (scriptSettings.time) {
     saveLog(
         `\nFINDING COMPLEXITY PARAMETER SETS FOR COMPLEXITY METRIC FAMILIES OPTIMIZING EACH OF THEIR GRADES TOOK ${time()}`,
         LogTarget.FINAL,
