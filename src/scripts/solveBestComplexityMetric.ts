@@ -4,7 +4,6 @@ import {
     LogTarget,
     program,
     saveLog,
-    ScriptFlag,
     scriptSettings,
     setupScriptAndIo,
     time,
@@ -16,9 +15,9 @@ import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from 
 import {computeZoneCommaEntries} from "../zoneCommas"
 
 program
-    .option(`-${ScriptFlag.SOS_MODE}, --sos-mode`, "sum-of-squares mode (minimize the sum of squared distances between the actual comma's complexity and the best comma's complexity, rather than boolean mode which simply gives a 1 when the actual comma is not the best comma and a 0 when it is")
-    .option(`-${ScriptFlag.SECONDARY_COMMA_ZONES}, --secondary-comma-zones`, "use commas in each comma's secondary comma zone, rather than the default behavior of its capture zone in the Extreme precision level notation")
-    .option(`-${ScriptFlag.COMPLEXITY_SEARCH_ED}, --complexity-search-ed <complexitySearchEd>`, "number of equal divisions for each parameter's search scope")
+    .option("--sos-mode", "sum-of-squares mode (minimize the sum of squared distances between the actual comma's complexity and the best comma's complexity, rather than boolean mode which simply gives a 1 when the actual comma is not the best comma and a 0 when it is")
+    .option("--secondary-comma-zones", "use commas in each comma's secondary comma zone, rather than the default behavior of its capture zone in the Extreme precision level notation")
+    .option("--complexity-search-ed <complexitySearchEd>", "number of equal divisions for each parameter's search scope")
 
 setupScriptAndIo("solveBestComplexityMetric" as Filename, [LogTarget.ALL])
 
