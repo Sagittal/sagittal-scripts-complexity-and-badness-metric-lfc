@@ -1,4 +1,4 @@
-import {areScamonsEqual, BLANK, Comma, formatDecimal, Grade, LogTarget, saveLog} from "@sagittal/general"
+import {areSpevsEqual, BLANK, Comma, formatDecimal, Grade, LogTarget, saveLog} from "@sagittal/general"
 import {CommaClassId, Complexity, formatComma, getCommaClass} from "@sagittal/system"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
 import {ComplexityMetric, ComplexityParameterSet} from "./types"
@@ -15,7 +15,7 @@ const computeZoneComplexityMetricGrade = (
 
     commas.forEach((comma: Comma): void => {
         const complexity = complexityMetric(comma, complexityParameterSet)
-        const isActualComma = areScamonsEqual(comma, actualComma)
+        const isActualComma = areSpevsEqual(comma, actualComma)
 
         saveLog(
             `${isActualComma ? "*" : BLANK}${formatComma(comma)} complexity: ${formatDecimal(complexity)}`,

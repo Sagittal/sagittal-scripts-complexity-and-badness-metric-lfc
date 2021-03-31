@@ -3,7 +3,7 @@ import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../src/metrics"
 import {ComplexityMetricFamilyId} from "../../src/types"
 
 describe("complexityMetric", (): void => {
-    const comma = {monzo: [12, -4, 0, -2]} as Comma     // N2D3P9 = 10, AAS = 7.357, ATE = 4
+    const comma = {pev: [12, -4, 0, -2]} as Comma     // N2D3P9 = 10, AAS = 7.357, ATE = 4
 
     const a = 0.6 as Parameter
     const b = 1.5 as Parameter

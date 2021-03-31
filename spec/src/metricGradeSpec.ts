@@ -14,27 +14,27 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries = [
             [
                 CommaClassId._1_V_5_C,
-                [{monzo: [-4, 4, -1]}, {monzo: [24, -12, 0, -3, 1]}],
+                [{pev: [-4, 4, -1]}, {pev: [24, -12, 0, -3, 1]}],
             ],
             [
                 CommaClassId._1_V_17_k,
-                [{monzo: [16, -4, -1, -1, 0, 0, 0, 0, -1]}, {monzo: [-22, 11, -1, 1, 0, 0, 1]}],
+                [{pev: [16, -4, -1, -1, 0, 0, 0, 0, -1]}, {pev: [-22, 11, -1, 1, 0, 0, 1]}],
             ],
             [
                 CommaClassId._11_P_4_k,
-                [{monzo: [8, 3, -4, 0, -1]}, {monzo: [12, -6, -1, 0, 0, 0, 1, -1]}, {monzo: [-8, 2, -1, 0, 1, 1]}],
+                [{pev: [8, 3, -4, 0, -1]}, {pev: [12, -6, -1, 0, 0, 0, 1, -1]}, {pev: [-8, 2, -1, 0, 1, 1]}],
             ],
             [
                 CommaClassId._31_V_11_k,
-                [{monzo: [11, 1, -3, -2]}, {monzo: [14, -3, -1, 0, -2]}, {monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1]}],
+                [{pev: [11, 1, -3, -2]}, {pev: [14, -3, -1, 0, -2]}, {pev: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1]}],
             ],
             [
                 CommaClassId._19_V_5_P_4_7_s,
-                [{monzo: [6, 2, -2, 0, 0, 0, 0, 0, -1]}, {monzo: [20, -11, -1, 0, 1, -1]}],
+                [{pev: [6, 2, -2, 0, 0, 0, 0, 0, -1]}, {pev: [20, -11, -1, 0, 1, -1]}],
             ],
             [
                 CommaClassId._5_V_23_M,
-                [{monzo: [-16, 10, -3, 0, 1, 1]}, {monzo: [-7, 5, -1, -1, 0, 0, 0, 1]}, {monzo: [4, 5, 0, -3, -1]}],
+                [{pev: [-16, 10, -3, 0, 1, 1]}, {pev: [-7, 5, -1, -1, 0, 0, 0, 1]}, {pev: [4, 5, 0, -3, -1]}],
             ],
         ] as Array<[CommaClassId, Comma[]]>
         const {metric, parameters} = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE]
@@ -47,7 +47,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).toHaveBeenCalledWith(
             [
                 CommaClassId._1_V_5_C,
-                [{monzo: [-4, 4, -1]}, {monzo: [24, -12, 0, -3, 1]}] as Comma[],
+                [{pev: [-4, 4, -1]}, {pev: [24, -12, 0, -3, 1]}] as Comma[],
             ],
             metric,
             complexityParameterSet,
@@ -55,7 +55,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).toHaveBeenCalledWith(
             [
                 CommaClassId._1_V_17_k,
-                [{monzo: [16, -4, -1, -1, 0, 0, 0, 0, -1]}, {monzo: [-22, 11, -1, 1, 0, 0, 1]}] as Comma[],
+                [{pev: [16, -4, -1, -1, 0, 0, 0, 0, -1]}, {pev: [-22, 11, -1, 1, 0, 0, 1]}] as Comma[],
             ],
             metric,
             complexityParameterSet,
@@ -63,7 +63,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).not.toHaveBeenCalledWith(
             [
                 CommaClassId._11_P_4_k,
-                [{monzo: [8, 3, -4, 0, -1]}, {monzo: [12, -6, -1, 0, 0, 0, 1, -1]}, {monzo: [-8, 2, -1, 0, 1, 1]}] as Comma[],
+                [{pev: [8, 3, -4, 0, -1]}, {pev: [12, -6, -1, 0, 0, 0, 1, -1]}, {pev: [-8, 2, -1, 0, 1, 1]}] as Comma[],
             ],
             metric,
             complexityParameterSet,
@@ -71,7 +71,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).toHaveBeenCalledWith(
             [
                 CommaClassId._31_V_11_k,
-                [{monzo: [11, 1, -3, -2]}, {monzo: [14, -3, -1, 0, -2]}, {monzo: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1]}] as Comma[],
+                [{pev: [11, 1, -3, -2]}, {pev: [14, -3, -1, 0, -2]}, {pev: [-11, 6, 0, 0, -1, 0, 0, 0, 0, 0, 1]}] as Comma[],
             ],
             metric,
             complexityParameterSet,
@@ -79,7 +79,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).not.toHaveBeenCalledWith(
             [
                 CommaClassId._19_V_5_P_4_7_s,
-                [{monzo: [6, 2, -2, 0, 0, 0, 0, 0, -1]}, {monzo: [20, -11, -1, 0, 1, -1]}] as Comma[],
+                [{pev: [6, 2, -2, 0, 0, 0, 0, 0, -1]}, {pev: [20, -11, -1, 0, 1, -1]}] as Comma[],
             ],
             metric,
             complexityParameterSet,
@@ -87,7 +87,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).toHaveBeenCalledWith(
             [
                 CommaClassId._5_V_23_M,
-                [{monzo: [-16, 10, -3, 0, 1, 1]}, {monzo: [-7, 5, -1, -1, 0, 0, 0, 1]}, {monzo: [4, 5, 0, -3, -1]}] as Comma[],
+                [{pev: [-16, 10, -3, 0, 1, 1]}, {pev: [-7, 5, -1, -1, 0, 0, 0, 1]}, {pev: [4, 5, 0, -3, -1]}] as Comma[],
             ],
             metric,
             complexityParameterSet,

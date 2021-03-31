@@ -7,23 +7,23 @@ import {computeZoneComplexityMetricGrade} from "../../src/zoneMetricGrade"
 
 describe("computeZoneComplexityMetricGrade", (): void => {
     const COMMAS_FOR_1_V_5_7_13_n = [
-        {monzo: [17, -11, -3, 0, 0, 2]},
-        {monzo: [-18, 11, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1]},
-        {monzo: [12, -2, -1, -1, 0, -1]},
-        {monzo: [-5, 8, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]},
-        {monzo: [-32, 13, 1, 2, 1]},
-        {monzo: [-21, 13, 2, 0, 0, 0, 0, -1]},
-        {monzo: [-1, -7, 4, 1]},
+        {pev: [17, -11, -3, 0, 0, 2]},
+        {pev: [-18, 11, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1]},
+        {pev: [12, -2, -1, -1, 0, -1]},
+        {pev: [-5, 8, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]},
+        {pev: [-32, 13, 1, 2, 1]},
+        {pev: [-21, 13, 2, 0, 0, 0, 0, -1]},
+        {pev: [-1, -7, 4, 1]},
     ] as Comma[]
     const COMMAS_FOR_1_V_5_P_2_7_P_3_k = [
-        {monzo: [-7, 11, -3, 0, -1]},
-        {monzo: [21, -5, -2, -3]},
-        {monzo: [24, -13, -1, 0, 1, 0, 0, 0, -1]},
-        {monzo: [-3, 2, 0, 0, 0, 0, 1, -1]},
-        {monzo: [-23, 10, 0, 0, 1, 1]},
-        {monzo: [21, -10, 0, 1, 0, -1, 0, -1]},
-        {monzo: [1, -2, 0, 1, 1, 0, -1]},
-        {monzo: [-14, 5, 2, -1, 0, 0, 0, 1]},
+        {pev: [-7, 11, -3, 0, -1]},
+        {pev: [21, -5, -2, -3]},
+        {pev: [24, -13, -1, 0, 1, 0, 0, 0, -1]},
+        {pev: [-3, 2, 0, 0, 0, 0, 1, -1]},
+        {pev: [-23, 10, 0, 0, 1, 1]},
+        {pev: [21, -10, 0, 1, 0, -1, 0, -1]},
+        {pev: [1, -2, 0, 1, 1, 0, -1]},
+        {pev: [-14, 5, 2, -1, 0, 0, 0, 1]},
     ] as Comma[]
     const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE].metric
     const complexityParameterSet = {
