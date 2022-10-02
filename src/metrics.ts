@@ -1,5 +1,3 @@
-// tslint:disable max-line-length
-
 import {Comma, compute23FreeClass} from "@sagittal/general"
 import {Complexity, computeAas, computeAte, computeN2D3P9} from "@sagittal/system"
 import {DEFAULT_COMPLEXITY_PARAMETER_VALUE} from "./constants"

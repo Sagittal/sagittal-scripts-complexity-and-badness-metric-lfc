@@ -1,5 +1,3 @@
-// tslint:disable max-line-length
-
 import {Comma} from "@sagittal/general"
 import {CommaClassId} from "@sagittal/system"
 import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../src/globals"

@@ -1,5 +1,3 @@
-// tslint:disable max-line-length
-
 import {Combination, Parameter} from "@sagittal/general"
 import {computeComplexityParameterSets} from "../../src/parameters"
 import {ComplexityParameterId} from "../../src/types"

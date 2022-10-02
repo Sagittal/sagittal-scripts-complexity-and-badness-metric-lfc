@@ -20,15 +20,16 @@ program
     .option("--complexity-search-ed <complexitySearchEd>", "number of equal divisions for each parameter's search scope")
 
 setupScriptAndIo("solveBestComplexityMetric" as Filename, [LogTarget.ALL])
+const {sosMode, secondaryCommaZones, complexitySearchEd} = program.opts()
 
 complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries =
-    computeZoneCommaEntries(!!program.secondaryCommaZones)
+    computeZoneCommaEntries(!!secondaryCommaZones)
 
-if (!isUndefined(program.sosMode)) {
-    complexityAndBadnessMetricLfcScriptGroupSettings.sosMode = program.sosMode
+if (!isUndefined(sosMode)) {
+    complexityAndBadnessMetricLfcScriptGroupSettings.sosMode = sosMode
 }
-if (!isUndefined(program.complexitySearchEd)) {
-    complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd = program.complexitySearchEd
+if (!isUndefined(complexitySearchEd)) {
+    complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd = complexitySearchEd
 }
 
 const complexityMetricFamiliesWithParametersEntries = Object.entries(

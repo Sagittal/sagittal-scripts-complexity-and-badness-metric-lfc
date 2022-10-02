@@ -17,11 +17,12 @@ import {computeZoneBadnessGrade} from "../zoneBadnessGrade"
 import {computeZoneCommaEntries} from "../zoneCommas"
 
 setupScriptAndIo("jiNotationBadness" as Filename, [LogTarget.ALL])
+const {secondaryCommaZones} = program.opts()
 
 let jiNotationBadnessGrade = 0 as Sum<Grade<Notation>>
 
 complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries =
-    computeZoneCommaEntries(!!program.secondaryCommaZones)
+    computeZoneCommaEntries(!!secondaryCommaZones)
 
 saveLog("Badness grades per zone (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
 complexityAndBadnessMetricLfcScriptGroupSettings.zoneCommaEntries
