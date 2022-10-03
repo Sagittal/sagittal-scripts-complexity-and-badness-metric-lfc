@@ -1,8 +1,8 @@
-import {Io, onlyRunInCi, runScriptAndGetConsoleOutput} from "@sagittal/general"
+import {Io, slowTestOnlyRunInFullSuite, runScriptAndGetConsoleOutput} from "@sagittal/general"
 
 describe("solve-best-complexity-metric", (): void => {
     it("for each of the 8 complexity metric families, checks each of its complexity parameter sets in scope, then lists the sets which tie for minimizing the metric grade", (): void => {
-        onlyRunInCi()
+        slowTestOnlyRunInFullSuite()
 
         const script = `npm run solve-best-complexity-metric -- --complexity-search-ed 3 --log-targets final` as Io
 

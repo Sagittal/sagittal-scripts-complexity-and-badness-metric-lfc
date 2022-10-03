@@ -1,8 +1,8 @@
-import {Io, onlyRunInCi, runScriptAndGetConsoleOutput} from "@sagittal/general"
+import {Io, slowTestOnlyRunInFullSuite, runScriptAndGetConsoleOutput} from "@sagittal/general"
 
 describe("ji-notation-badness", (): void => {
     it("checks each comma in the JI notation to verify if it is the best (by LPEI) in its zone (Extreme capture zone, by default, but can be configured for secondary comma zone) and if not gives the JI notation one point (which is bad)", (): void => {
-        onlyRunInCi()
+        slowTestOnlyRunInFullSuite()
 
         const script = `npm run ji-notation-badness` as Io
 
