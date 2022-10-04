@@ -4,7 +4,7 @@ describe("solve-best-complexity-metric", (): void => {
     it("for each of the 8 complexity metric families, checks each of its complexity parameter sets in scope, then lists the sets which tie for minimizing the metric grade", (): void => {
         slowTestOnlyRunInFullSuite()
 
-        const script = `npm run solve-best-complexity-metric -- --complexity-search-ed 3 --log-targets final` as Io
+        const script = "npm run solve-best-complexity-metric -- --complexity-search-ed 3 --log-targets final" as Io
 
         const actual = runScriptAndGetConsoleOutput(script)
 
