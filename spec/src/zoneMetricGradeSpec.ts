@@ -1,31 +1,32 @@
-import {Comma, Grade, Parameter} from "@sagittal/general"
-import {CommaClassId} from "@sagittal/system"
-import {complexityAndBadnessMetricLfcScriptGroupSettings} from "../../src/globals"
-import {COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS} from "../../src/metrics"
-import {ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId} from "../../src/types"
-import {computeZoneComplexityMetricGrade} from "../../src/zoneMetricGrade"
+import { Comma, Grade, Parameter } from "@sagittal/general"
+import { CommaClassId } from "@sagittal/system"
+import { complexityAndBadnessMetricLfcScriptGroupSettings } from "../../src/globals"
+import { COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS } from "../../src/metrics"
+import { ComplexityMetric, ComplexityMetricFamilyId, ComplexityParameterId } from "../../src/types"
+import { computeZoneComplexityMetricGrade } from "../../src/zoneMetricGrade"
 
 describe("computeZoneComplexityMetricGrade", (): void => {
     const COMMAS_FOR_1_V_5_7_13_n = [
-        {pev: [17, -11, -3, 0, 0, 2]},
-        {pev: [-18, 11, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1]},
-        {pev: [12, -2, -1, -1, 0, -1]},
-        {pev: [-5, 8, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1]},
-        {pev: [-32, 13, 1, 2, 1]},
-        {pev: [-21, 13, 2, 0, 0, 0, 0, -1]},
-        {pev: [-1, -7, 4, 1]},
+        { vector: [17, -11, -3, 0, 0, 2] },
+        { vector: [-18, 11, -2, 0, 0, 0, 0, 0, 0, 0, 0, 1] },
+        { vector: [12, -2, -1, -1, 0, -1] },
+        { vector: [-5, 8, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1] },
+        { vector: [-32, 13, 1, 2, 1] },
+        { vector: [-21, 13, 2, 0, 0, 0, 0, -1] },
+        { vector: [-1, -7, 4, 1] },
     ] as Comma[]
     const COMMAS_FOR_1_V_5_P_2_7_P_3_k = [
-        {pev: [-7, 11, -3, 0, -1]},
-        {pev: [21, -5, -2, -3]},
-        {pev: [24, -13, -1, 0, 1, 0, 0, 0, -1]},
-        {pev: [-3, 2, 0, 0, 0, 0, 1, -1]},
-        {pev: [-23, 10, 0, 0, 1, 1]},
-        {pev: [21, -10, 0, 1, 0, -1, 0, -1]},
-        {pev: [1, -2, 0, 1, 1, 0, -1]},
-        {pev: [-14, 5, 2, -1, 0, 0, 0, 1]},
+        { vector: [-7, 11, -3, 0, -1] },
+        { vector: [21, -5, -2, -3] },
+        { vector: [24, -13, -1, 0, 1, 0, 0, 0, -1] },
+        { vector: [-3, 2, 0, 0, 0, 0, 1, -1] },
+        { vector: [-23, 10, 0, 0, 1, 1] },
+        { vector: [21, -10, 0, 1, 0, -1, 0, -1] },
+        { vector: [1, -2, 0, 1, 1, 0, -1] },
+        { vector: [-14, 5, 2, -1, 0, 0, 0, 1] },
     ] as Comma[]
-    const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE].metric
+    const complexityMetric =
+        COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE].metric
     const complexityParameterSet = {
         [ComplexityParameterId.SE]: 0.00195 as Parameter,
         [ComplexityParameterId.TE]: 0.00195 as Parameter,

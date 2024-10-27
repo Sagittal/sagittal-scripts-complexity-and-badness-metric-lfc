@@ -1,7 +1,15 @@
-import {areSpevsEqual, BLANK, Comma, formatDecimal, Grade, LogTarget, saveLog} from "@sagittal/general"
-import {CommaClassId, Complexity, formatComma, getCommaClass} from "@sagittal/system"
-import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
-import {ComplexityMetric, ComplexityParameterSet} from "./types"
+import {
+    areScaledVectorsEqual,
+    BLANK,
+    Comma,
+    formatDecimal,
+    Grade,
+    LogTarget,
+    saveLog,
+} from "@sagittal/general"
+import { CommaClassId, Complexity, formatComma, getCommaClass } from "@sagittal/system"
+import { complexityAndBadnessMetricLfcScriptGroupSettings } from "./globals"
+import { ComplexityMetric, ComplexityParameterSet } from "./types"
 
 const computeZoneComplexityMetricGrade = (
     [commaClassId, commas]: [CommaClassId, Comma[]],
@@ -15,10 +23,12 @@ const computeZoneComplexityMetricGrade = (
 
     commas.forEach((comma: Comma): void => {
         const complexity = complexityMetric(comma, complexityParameterSet)
-        const isActualComma = areSpevsEqual(comma, actualComma)
+        const isActualComma = areScaledVectorsEqual(comma, actualComma)
 
         saveLog(
-            `${isActualComma ? "*" : BLANK}${formatComma(comma)} complexity: ${formatDecimal(complexity)}`,
+            `${isActualComma ? "*" : BLANK}${formatComma(comma)} complexity: ${formatDecimal(
+                complexity,
+            )}`,
             LogTarget.DETAILS,
         )
 
@@ -28,20 +38,20 @@ const computeZoneComplexityMetricGrade = (
         }
     })
 
-    const zoneComplexityMetricGrade = complexityAndBadnessMetricLfcScriptGroupSettings.sosMode ?
-        (actualCommaComplexity - leastCommaComplexity) ** 2 as Grade<ComplexityMetric> :
-        actualCommaComplexity === leastCommaComplexity ?
-            0 as Grade<ComplexityMetric> :
-            1 as Grade<ComplexityMetric>
+    const zoneComplexityMetricGrade = complexityAndBadnessMetricLfcScriptGroupSettings.sosMode
+        ? (((actualCommaComplexity - leastCommaComplexity) ** 2) as Grade<ComplexityMetric>)
+        : actualCommaComplexity === leastCommaComplexity
+        ? (0 as Grade<ComplexityMetric>)
+        : (1 as Grade<ComplexityMetric>)
 
     saveLog(
-        `complexity metric grade for ${formatComma(actualComma)}'s zone: ${zoneComplexityMetricGrade}`,
+        `complexity metric grade for ${formatComma(
+            actualComma,
+        )}'s zone: ${zoneComplexityMetricGrade}`,
         LogTarget.DETAILS,
     )
 
     return zoneComplexityMetricGrade
 }
 
-export {
-    computeZoneComplexityMetricGrade,
-}
+export { computeZoneComplexityMetricGrade }

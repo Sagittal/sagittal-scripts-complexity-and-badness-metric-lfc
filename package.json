@@ -19,8 +19,8 @@
     "ji-notation-badness": "node -r ts-node/register/transpile-only --max-old-space-size=131072 src/scripts/jiNotationBadness.ts"
   },
   "devDependencies": {
-    "@sagittal/general": "^1.0.120",
-    "@sagittal/system": "^1.0.34",
+    "@sagittal/general": "^1.0.135",
+    "@sagittal/system": "^1.0.98",
     "@types/jasmine": "^4.3.0",
     "@types/node": "^18.8.0",
     "jasmine": "^4.4.0",
