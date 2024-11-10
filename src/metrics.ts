@@ -129,27 +129,24 @@ const rpp = (
     return (n2d3p9 ** a + sP * aas ** b + tP * ate ** c) as Complexity
 }
 
+/* eslint-disable prettier/prettier */
 const COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS: Record<
     ComplexityMetricFamilyId,
     { metric: ComplexityMetric; parameters: ComplexityParameterId[] }
 > = {
-    [ComplexityMetricFamilyId.LEE]: {
-        // Lb(N2D3P9) + t × 2^ATE + s × 2^AAS
+    [ComplexityMetricFamilyId.LEE]: {                                                               // Lb(N2D3P9) + t × 2^ATE + s × 2^AAS
         metric: lee,
         parameters: [ComplexityParameterId.SE, ComplexityParameterId.TE],
     },
-    [ComplexityMetricFamilyId.REE]: {
-        // N2D3P9^a + t × 2^ATE + s × 2^AAS
+    [ComplexityMetricFamilyId.REE]: {                                                               // N2D3P9^a + t × 2^ATE + s × 2^AAS
         metric: ree,
         parameters: [ComplexityParameterId.A, ComplexityParameterId.SE, ComplexityParameterId.TE],
     },
-    [ComplexityMetricFamilyId.LPE]: {
-        // Lb(N2D3P9) + t × ATE^b + s × 2^AAS
+    [ComplexityMetricFamilyId.LPE]: {                                                               // Lb(N2D3P9) + t × ATE^b + s × 2^AAS
         metric: lpe,
         parameters: [ComplexityParameterId.B, ComplexityParameterId.SP, ComplexityParameterId.TE],
     },
-    [ComplexityMetricFamilyId.RPE]: {
-        // N2D3P9^a + t × ATE^b + s × 2^AAS
+    [ComplexityMetricFamilyId.RPE]: {                                                               // N2D3P9^a + t × ATE^b + s × 2^AAS
         metric: rpe,
         parameters: [
             ComplexityParameterId.A,
@@ -158,13 +155,11 @@ const COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS: Record<
             ComplexityParameterId.TE,
         ],
     },
-    [ComplexityMetricFamilyId.LEP]: {
-        // Lb(N2D3P9) + t × 2^ATE + s × AAS^c
+    [ComplexityMetricFamilyId.LEP]: {                                                               // Lb(N2D3P9) + t × 2^ATE + s × AAS^c
         metric: lep,
         parameters: [ComplexityParameterId.SE, ComplexityParameterId.C, ComplexityParameterId.TP],
     },
-    [ComplexityMetricFamilyId.REP]: {
-        // N2D3P9^a + t × 2^ATE + s × AAS^c
+    [ComplexityMetricFamilyId.REP]: {                                                               // N2D3P9^a + t × 2^ATE + s × AAS^c
         metric: rep,
         parameters: [
             ComplexityParameterId.A,
@@ -173,8 +168,7 @@ const COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS: Record<
             ComplexityParameterId.TP,
         ],
     },
-    [ComplexityMetricFamilyId.LPP]: {
-        // Lb(N2D3P9) + t × ATE^b + s × AAS^c
+    [ComplexityMetricFamilyId.LPP]: {                                                               // Lb(N2D3P9) + t × ATE^b + s × AAS^c
         metric: lpp,
         parameters: [
             ComplexityParameterId.B,
@@ -183,8 +177,7 @@ const COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS: Record<
             ComplexityParameterId.TP,
         ],
     },
-    [ComplexityMetricFamilyId.RPP]: {
-        // N2D3P9^a + t × ATE^b + s × AAS^c
+    [ComplexityMetricFamilyId.RPP]: {                                                               // N2D3P9^a + t × ATE^b + s × AAS^c
         metric: rpp,
         parameters: [
             ComplexityParameterId.A,
