@@ -1,6 +1,12 @@
-import {Combination, computePossibilities, DynamicParameterScope, Parameter, Window} from "@sagittal/general"
-import {complexityAndBadnessMetricLfcScriptGroupSettings} from "./globals"
-import {ComplexityParameterId, ComplexityParameterSet} from "./types"
+import {
+    Combination,
+    computePossibilities,
+    DynamicParameterScope,
+    Parameter,
+    Window,
+} from "@sagittal/general"
+import { complexityAndBadnessMetricLfcScriptGroupSettings } from "./globals"
+import { ComplexityParameterId, ComplexityParameterSet } from "./types"
 
 // Const SE_OR_TE_WHEN_DAAS_OR_DATE_IS_9 = 0.00195 as Parameter
 //
@@ -22,37 +28,37 @@ const computeComplexityParameterScopes = (): Record<ComplexityParameterId, Dynam
     return {
         [ComplexityParameterId.A]: {
             center: 0.5 as Parameter,
-            window: 1 as Window<{of: Parameter}>,
+            window: 1 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.B]: {
             center: 2 as Parameter,
-            window: 2 as Window<{of: Parameter}>,
+            window: 2 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.C]: {
             center: 2 as Parameter,
-            window: 2 as Window<{of: Parameter}>,
+            window: 2 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.SE]: {
             center: 0.002 as Parameter,
-            window: 0.002 as Window<{of: Parameter}>,
+            window: 0.002 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.TE]: {
             center: 0.002 as Parameter,
-            window: 0.002 as Window<{of: Parameter}>,
+            window: 0.002 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.SP]: {
             center: 1 as Parameter,
-            window: 2 as Window<{of: Parameter}>,
+            window: 2 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
         [ComplexityParameterId.TP]: {
             center: 1 as Parameter,
-            window: 2 as Window<{of: Parameter}>,
+            window: 2 as Window<{ of: Parameter }>,
             ed: complexityAndBadnessMetricLfcScriptGroupSettings.complexitySearchEd,
         },
     }
@@ -79,6 +85,4 @@ const computeComplexityParameterSets = (
     return computePossibilities(scope) as Combination<ComplexityParameterSet>
 }
 
-export {
-    computeComplexityParameterSets,
-}
+export { computeComplexityParameterSets }

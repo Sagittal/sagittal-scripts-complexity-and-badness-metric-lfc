@@ -30,10 +30,7 @@ describe("computeZoneBadnessGrade", (): void => {
         })
 
         it("returns 0 when a comma is the least bad comma in its zone", (): void => {
-            const actual = computeZoneBadnessGrade([
-                CommaClassId._1_V_5_7_13_n,
-                COMMAS_FOR_1_V_5_7_13_n,
-            ])
+            const actual = computeZoneBadnessGrade([CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_V_5_7_13_n])
 
             const expected = 0 as Grade<Notation>
             expect(actual).toBeCloseTo(expected)
@@ -58,10 +55,7 @@ describe("computeZoneBadnessGrade", (): void => {
         })
 
         it("returns 0 points (good) when a comma is the least bad comma in its zone", (): void => {
-            const actual = computeZoneBadnessGrade([
-                CommaClassId._1_V_5_7_13_n,
-                COMMAS_FOR_1_V_5_7_13_n,
-            ])
+            const actual = computeZoneBadnessGrade([CommaClassId._1_V_5_7_13_n, COMMAS_FOR_1_V_5_7_13_n])
 
             const expected = 0 as Grade<Notation>
             expect(actual).toBe(expected)

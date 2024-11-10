@@ -26,9 +26,7 @@ const computeZoneComplexityMetricGrade = (
         const isActualComma = areScaledVectorsEqual(comma, actualComma)
 
         saveLog(
-            `${isActualComma ? "*" : BLANK}${formatComma(comma)} complexity: ${formatDecimal(
-                complexity,
-            )}`,
+            `${isActualComma ? "*" : BLANK}${formatComma(comma)} complexity: ${formatDecimal(complexity)}`,
             LogTarget.DETAILS,
         )
 
@@ -41,13 +39,11 @@ const computeZoneComplexityMetricGrade = (
     const zoneComplexityMetricGrade = complexityAndBadnessMetricLfcScriptGroupSettings.sosMode
         ? (((actualCommaComplexity - leastCommaComplexity) ** 2) as Grade<ComplexityMetric>)
         : actualCommaComplexity === leastCommaComplexity
-        ? (0 as Grade<ComplexityMetric>)
-        : (1 as Grade<ComplexityMetric>)
+          ? (0 as Grade<ComplexityMetric>)
+          : (1 as Grade<ComplexityMetric>)
 
     saveLog(
-        `complexity metric grade for ${formatComma(
-            actualComma,
-        )}'s zone: ${zoneComplexityMetricGrade}`,
+        `complexity metric grade for ${formatComma(actualComma)}'s zone: ${zoneComplexityMetricGrade}`,
         LogTarget.DETAILS,
     )
 

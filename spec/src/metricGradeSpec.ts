@@ -13,10 +13,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
             [CommaClassId._1_V_5_C, [{ vector: [-4, 4, -1] }, { vector: [24, -12, 0, -3, 1] }]],
             [
                 CommaClassId._1_V_17_k,
-                [
-                    { vector: [16, -4, -1, -1, 0, 0, 0, 0, -1] },
-                    { vector: [-22, 11, -1, 1, 0, 0, 1] },
-                ],
+                [{ vector: [16, -4, -1, -1, 0, 0, 0, 0, -1] }, { vector: [-22, 11, -1, 1, 0, 0, 1] }],
             ],
             [
                 CommaClassId._11_P_4_k,
@@ -56,10 +53,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         computeMetricGradeForMetricAndParameterSet(metric, complexityParameterSet)
 
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).toHaveBeenCalledWith(
-            [
-                CommaClassId._1_V_5_C,
-                [{ vector: [-4, 4, -1] }, { vector: [24, -12, 0, -3, 1] }] as Comma[],
-            ],
+            [CommaClassId._1_V_5_C, [{ vector: [-4, 4, -1] }, { vector: [24, -12, 0, -3, 1] }] as Comma[]],
             metric,
             complexityParameterSet,
         )
@@ -101,10 +95,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
         expect(zoneMetricGrade.computeZoneComplexityMetricGrade).not.toHaveBeenCalledWith(
             [
                 CommaClassId._19_V_5_P_4_7_s,
-                [
-                    { vector: [6, 2, -2, 0, 0, 0, 0, 0, -1] },
-                    { vector: [20, -11, -1, 0, 1, -1] },
-                ] as Comma[],
+                [{ vector: [6, 2, -2, 0, 0, 0, 0, 0, -1] }, { vector: [20, -11, -1, 0, 1, -1] }] as Comma[],
             ],
             metric,
             complexityParameterSet,

@@ -25,8 +25,7 @@ describe("computeZoneComplexityMetricGrade", (): void => {
         { vector: [1, -2, 0, 1, 1, 0, -1] },
         { vector: [-14, 5, 2, -1, 0, 0, 0, 1] },
     ] as Comma[]
-    const complexityMetric =
-        COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE].metric
+    const complexityMetric = COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE].metric
     const complexityParameterSet = {
         [ComplexityParameterId.SE]: 0.00195 as Parameter,
         [ComplexityParameterId.TE]: 0.00195 as Parameter,

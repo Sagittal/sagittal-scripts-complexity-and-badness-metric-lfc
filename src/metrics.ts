@@ -1,6 +1,6 @@
-import {Comma, compute23FreeClass} from "@sagittal/general"
-import {Complexity, computeAas, computeAte, computeN2D3P9} from "@sagittal/system"
-import {DEFAULT_COMPLEXITY_PARAMETER_VALUE} from "./constants"
+import { Comma, compute23FreeClass } from "@sagittal/general"
+import { Complexity, computeAas, computeAte, computeN2D3P9 } from "@sagittal/system"
+import { DEFAULT_COMPLEXITY_PARAMETER_VALUE } from "./constants"
 import {
     ComplexityMetric,
     ComplexityMetricFamilyId,
@@ -23,11 +23,14 @@ const computeMetricParameters = (comma: Comma): MetricParameters => {
 
 const lee = (
     comma: Comma,
-    {sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE, tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE}: ComplexityParameterSet,
+    {
+        sE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+        tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
+    }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return Math.log2(n2d3p9) + sE * 2 ** aas + tE * 2 ** ate as Complexity
+    return (Math.log2(n2d3p9) + sE * 2 ** aas + tE * 2 ** ate) as Complexity
 }
 
 const ree = (
@@ -38,9 +41,9 @@ const ree = (
         tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return n2d3p9 ** a + sE * 2 ** aas + tE * 2 ** ate as Complexity
+    return (n2d3p9 ** a + sE * 2 ** aas + tE * 2 ** ate) as Complexity
 }
 
 const lpe = (
@@ -51,9 +54,9 @@ const lpe = (
         tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return Math.log2(n2d3p9) + sP * aas ** b + tE * 2 ** ate as Complexity
+    return (Math.log2(n2d3p9) + sP * aas ** b + tE * 2 ** ate) as Complexity
 }
 
 const rpe = (
@@ -65,9 +68,9 @@ const rpe = (
         tE = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return n2d3p9 ** a + sP * aas ** b + tE * 2 ** ate as Complexity
+    return (n2d3p9 ** a + sP * aas ** b + tE * 2 ** ate) as Complexity
 }
 
 const lep = (
@@ -78,9 +81,9 @@ const lep = (
         tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return Math.log2(n2d3p9) + sE * 2 ** aas + tP * ate ** c as Complexity
+    return (Math.log2(n2d3p9) + sE * 2 ** aas + tP * ate ** c) as Complexity
 }
 
 const rep = (
@@ -92,9 +95,9 @@ const rep = (
         tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return n2d3p9 ** a + sE * 2 ** aas + tP * ate ** c as Complexity
+    return (n2d3p9 ** a + sE * 2 ** aas + tP * ate ** c) as Complexity
 }
 
 const lpp = (
@@ -106,9 +109,9 @@ const lpp = (
         tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return Math.log2(n2d3p9) + sP * aas ** b + tP * ate ** c as Complexity
+    return (Math.log2(n2d3p9) + sP * aas ** b + tP * ate ** c) as Complexity
 }
 
 const rpp = (
@@ -121,46 +124,76 @@ const rpp = (
         tP = DEFAULT_COMPLEXITY_PARAMETER_VALUE,
     }: ComplexityParameterSet,
 ): Complexity => {
-    const {n2d3p9, aas, ate} = computeMetricParameters(comma)
+    const { n2d3p9, aas, ate } = computeMetricParameters(comma)
 
-    return n2d3p9 ** a + sP * aas ** b + tP * ate ** c as Complexity
+    return (n2d3p9 ** a + sP * aas ** b + tP * ate ** c) as Complexity
 }
 
-const COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS: Record<ComplexityMetricFamilyId, {metric: ComplexityMetric, parameters: ComplexityParameterId[]}> = {
-    [ComplexityMetricFamilyId.LEE]: {     // Lb(N2D3P9) + t × 2^ATE + s × 2^AAS
+const COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS: Record<
+    ComplexityMetricFamilyId,
+    { metric: ComplexityMetric; parameters: ComplexityParameterId[] }
+> = {
+    [ComplexityMetricFamilyId.LEE]: {
+        // Lb(N2D3P9) + t × 2^ATE + s × 2^AAS
         metric: lee,
         parameters: [ComplexityParameterId.SE, ComplexityParameterId.TE],
     },
-    [ComplexityMetricFamilyId.REE]: {     // N2D3P9^a + t × 2^ATE + s × 2^AAS
+    [ComplexityMetricFamilyId.REE]: {
+        // N2D3P9^a + t × 2^ATE + s × 2^AAS
         metric: ree,
         parameters: [ComplexityParameterId.A, ComplexityParameterId.SE, ComplexityParameterId.TE],
     },
-    [ComplexityMetricFamilyId.LPE]: {     // Lb(N2D3P9) + t × ATE^b + s × 2^AAS
+    [ComplexityMetricFamilyId.LPE]: {
+        // Lb(N2D3P9) + t × ATE^b + s × 2^AAS
         metric: lpe,
         parameters: [ComplexityParameterId.B, ComplexityParameterId.SP, ComplexityParameterId.TE],
     },
-    [ComplexityMetricFamilyId.RPE]: {     // N2D3P9^a + t × ATE^b + s × 2^AAS
+    [ComplexityMetricFamilyId.RPE]: {
+        // N2D3P9^a + t × ATE^b + s × 2^AAS
         metric: rpe,
-        parameters: [ComplexityParameterId.A, ComplexityParameterId.B, ComplexityParameterId.SP, ComplexityParameterId.TE],
+        parameters: [
+            ComplexityParameterId.A,
+            ComplexityParameterId.B,
+            ComplexityParameterId.SP,
+            ComplexityParameterId.TE,
+        ],
     },
-    [ComplexityMetricFamilyId.LEP]: {     // Lb(N2D3P9) + t × 2^ATE + s × AAS^c
+    [ComplexityMetricFamilyId.LEP]: {
+        // Lb(N2D3P9) + t × 2^ATE + s × AAS^c
         metric: lep,
         parameters: [ComplexityParameterId.SE, ComplexityParameterId.C, ComplexityParameterId.TP],
     },
-    [ComplexityMetricFamilyId.REP]: {     // N2D3P9^a + t × 2^ATE + s × AAS^c
+    [ComplexityMetricFamilyId.REP]: {
+        // N2D3P9^a + t × 2^ATE + s × AAS^c
         metric: rep,
-        parameters: [ComplexityParameterId.A, ComplexityParameterId.SE, ComplexityParameterId.C, ComplexityParameterId.TP],
+        parameters: [
+            ComplexityParameterId.A,
+            ComplexityParameterId.SE,
+            ComplexityParameterId.C,
+            ComplexityParameterId.TP,
+        ],
     },
-    [ComplexityMetricFamilyId.LPP]: {     // Lb(N2D3P9) + t × ATE^b + s × AAS^c
+    [ComplexityMetricFamilyId.LPP]: {
+        // Lb(N2D3P9) + t × ATE^b + s × AAS^c
         metric: lpp,
-        parameters: [ComplexityParameterId.B, ComplexityParameterId.SP, ComplexityParameterId.C, ComplexityParameterId.TP],
+        parameters: [
+            ComplexityParameterId.B,
+            ComplexityParameterId.SP,
+            ComplexityParameterId.C,
+            ComplexityParameterId.TP,
+        ],
     },
-    [ComplexityMetricFamilyId.RPP]: {     // N2D3P9^a + t × ATE^b + s × AAS^c
+    [ComplexityMetricFamilyId.RPP]: {
+        // N2D3P9^a + t × ATE^b + s × AAS^c
         metric: rpp,
-        parameters: [ComplexityParameterId.A, ComplexityParameterId.B, ComplexityParameterId.SP, ComplexityParameterId.C, ComplexityParameterId.TP],
+        parameters: [
+            ComplexityParameterId.A,
+            ComplexityParameterId.B,
+            ComplexityParameterId.SP,
+            ComplexityParameterId.C,
+            ComplexityParameterId.TP,
+        ],
     },
 }
 
-export {
-    COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS,
-}
+export { COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS }
