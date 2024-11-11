@@ -24,7 +24,7 @@ const computeZoneBadnessGrade = ([commaClassId, commas]: [CommaClassId, Comma[]]
     let actualCommaBadness = Infinity as Badness
 
     const actualComma = getCommaClass(commaClassId).pitch
-    const formatCommaOptions = { directedWord: DirectedWord.NEVER, directedNumbers: DirectedNumbers.ON }
+    const formatCommaOptions = { directedWord: DirectedWord.NEVER, directedNumbers: DirectedNumbers.ON } // TODO: perhaps save this somewhere as the like "old preferred format"
 
     commas.forEach((comma: Comma): void => {
         const badness = computeLpei(comma)
