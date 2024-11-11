@@ -43,7 +43,7 @@ describe("computeMetricGradeForMetricAndParameterSet", (): void => {
                     { vector: [4, 5, 0, -3, -1] },
                 ],
             ],
-        ] as Array<[CommaClassId, Comma[]]>
+        ] as [CommaClassId, Comma[]][]
         const { metric, parameters } =
             COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS[ComplexityMetricFamilyId.LEE]
         const complexityParameterSet = computeComplexityParameterSets(parameters)[0]

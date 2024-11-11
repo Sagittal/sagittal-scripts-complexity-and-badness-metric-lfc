@@ -1,7 +1,7 @@
 import { Comma, Filename, NEWLINE, readLines } from "@sagittal/general"
 import { CommaClassId } from "@sagittal/system"
 
-const computeZoneCommaEntries = (secondaryCommaZones: boolean): Array<[CommaClassId, Comma[]]> => {
+const computeZoneCommaEntries = (secondaryCommaZones: boolean): [CommaClassId, Comma[]][] => {
     const zoneCommaType = secondaryCommaZones ? "secondaryCommaZone" : "extremeCaptureZone"
 
     return Object.entries(
@@ -9,7 +9,7 @@ const computeZoneCommaEntries = (secondaryCommaZones: boolean): Array<[CommaClas
             CommaClassId,
             Comma[]
         >,
-    ) as Array<[CommaClassId, Comma[]]>
+    ) as [CommaClassId, Comma[]][]
 }
 
 export { computeZoneCommaEntries }

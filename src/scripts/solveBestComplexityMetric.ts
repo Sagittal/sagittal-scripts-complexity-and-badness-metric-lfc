@@ -50,7 +50,7 @@ if (!isUndefined(complexitySearchEd)) {
 
 const complexityMetricFamiliesWithParametersEntries = Object.entries(
     COMPLEXITY_METRIC_FAMILIES_WITH_PARAMETERS,
-) as Array<[ComplexityMetricFamilyId, { metric: ComplexityMetric; parameters: ComplexityParameterId[] }]>
+) as [ComplexityMetricFamilyId, { metric: ComplexityMetric; parameters: ComplexityParameterId[] }][]
 
 saveLog("Complexity grades (* identifies the actual comma for each zone)\n", LogTarget.DETAILS)
 complexityMetricFamiliesWithParametersEntries.forEach(

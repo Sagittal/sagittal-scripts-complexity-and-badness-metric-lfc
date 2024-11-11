@@ -4,7 +4,7 @@ import { ComplexityAndBadnessMetricLfcScriptGroupSettings } from "./types"
 
 const DEFAULT_COMPLEXITY_AND_BADNESS_METRIC_LFC_SCRIPTS_SETTINGS: ComplexityAndBadnessMetricLfcScriptGroupSettings =
     {
-        zoneCommaEntries: [] as Array<[CommaClassId, Comma[]]>,
+        zoneCommaEntries: [] as [CommaClassId, Comma[]][],
         sosMode: false,
         complexitySearchEd: 11 as Ed<{ of: Parameter }>,
     }

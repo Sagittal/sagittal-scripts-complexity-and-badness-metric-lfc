@@ -27,7 +27,7 @@ enum ComplexityParameterId {
 }
 
 interface ComplexityAndBadnessMetricLfcScriptGroupSettings {
-    zoneCommaEntries: Array<[CommaClassId, Comma[]]>
+    zoneCommaEntries: [CommaClassId, Comma[]][]
     sosMode: boolean
     complexitySearchEd: Ed<{ of: Parameter }>
 }
