@@ -11,11 +11,10 @@ import {
     Badness,
     CommaClassId,
     computeLpei,
-    DirectedNumbers,
-    DirectedWord,
     formatComma,
     getCommaClass,
     Notation,
+    OUTDATED_COMMA_NAME_OPTIONS_PREFERENCE,
 } from "@sagittal/system"
 import { complexityAndBadnessMetricLfcScriptGroupSettings } from "./globals"
 
@@ -24,7 +23,7 @@ const computeZoneBadnessGrade = ([commaClassId, commas]: [CommaClassId, Comma[]]
     let actualCommaBadness = Infinity as Badness
 
     const actualComma = getCommaClass(commaClassId).pitch
-    const formatCommaOptions = { directedWord: DirectedWord.NEVER, directedNumbers: DirectedNumbers.ON } // TODO: perhaps save this somewhere as the like "old preferred format"
+    const formatCommaOptions = OUTDATED_COMMA_NAME_OPTIONS_PREFERENCE
 
     commas.forEach((comma: Comma): void => {
         const badness = computeLpei(comma)
